@@ -10,5 +10,6 @@ import com.smart.stock.models.Article;
 @Repository
 public interface ArticleRepository extends JpaRepository<Article, Integer>{
 
-	Optional<Article> findArticleByCodeArticle(String codeArticle);
+	Optional<Article> findByCodeArticle(String codeArticle);
+	
 }

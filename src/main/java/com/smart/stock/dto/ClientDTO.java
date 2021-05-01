@@ -2,7 +2,6 @@ package com.smart.stock.dto;
 
 import java.util.List;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.smart.stock.models.Client;
 
 import lombok.Builder;
@@ -26,7 +25,8 @@ public class ClientDTO {
 	
 	private String numTel;
 	
-	@JsonIgnore
+	private Integer idEntreprise;
+	
 	private List<CommandeClientDTO> commandeClients;
 	
 	public static ClientDTO fromEntity(Client Client) {
@@ -41,6 +41,7 @@ public class ClientDTO {
 				.mail(Client.getMail())
 				.numTel(Client.getNumTel())
 				.adresse(AdresseDTO.fromEntity(Client.getAdresse()))
+				.idEntreprise(Client.getIdEntreprise())
 				.build();
 	}
 	
@@ -56,6 +57,7 @@ public class ClientDTO {
 		Client.setMail(ClientDTO.getMail());
 		Client.setNumTel(ClientDTO.getNumTel());
 		Client.setAdresse(AdresseDTO.toEntity(ClientDTO.getAdresse()));
+		Client.setIdEntreprise(ClientDTO.getIdEntreprise());
 		return Client;
 }
 	

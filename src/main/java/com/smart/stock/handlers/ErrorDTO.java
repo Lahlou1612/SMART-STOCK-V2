@@ -1,6 +1,5 @@
 package com.smart.stock.handlers;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import com.smart.stock.exception.ErrorCodes;
@@ -24,6 +23,6 @@ public class ErrorDTO {
 	
 	private String message;
 	
-	private List<String> errors = new ArrayList<>();
+	private List<String> errors;
 
 }

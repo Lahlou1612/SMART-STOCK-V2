@@ -1,11 +1,13 @@
 package com.smart.stock.models;
 
 import java.time.Instant;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
-
+  
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -16,7 +18,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @EqualsAndHashCode(callSuper = true)
 @Entity
-@Table(name = "article")
+@Table(name = "vente")
 public class Vente extends AbstractEntity{
 	private static final long serialVersionUID = 1L;
 	
@@ -31,4 +33,7 @@ public class Vente extends AbstractEntity{
 	
 	@Column(name = "identreprise")
 	private Integer idEntreprise;
+	
+	@OneToMany(mappedBy = "vente")
+	private List<LigneVente> ligneVentes;
 }

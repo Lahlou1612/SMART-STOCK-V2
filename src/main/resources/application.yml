@@ -6,7 +6,7 @@ spring:
     driver-class-name: com.mysql.jdbc.Driver
   jpa:
     database: MYSQL
-    show-sql: false
+    show-sql: true
     hibernate:
       ddl-auto: update
     properties: 
@@ -14,5 +14,12 @@ spring:
         dialect: org.hibernate.dialect.MySQL5InnoDBDialect
 
 server:
-    port: 8883
+    port: 8884   
+    
+flickr:
+    apiKey: c582f7f4cb0da8cddd64aa1fff75145b
+    apiSecret: 657529e4da2fa9ae
+    appKey: 72157719057798209-c828e4c0fae03508
+    appSecret: 17297a6b84cadf67
+   
     

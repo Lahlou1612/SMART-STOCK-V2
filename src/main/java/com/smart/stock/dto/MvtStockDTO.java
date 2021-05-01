@@ -23,6 +23,8 @@ public class MvtStockDTO {
 	
 	private TypeMvtStock mvtStock;
 	
+	private Integer idEntreprise;
+	
 	public static MvtStockDTO fromEntity (MvtStock mvtStock) {
 		if (mvtStock==null) {
 			
@@ -34,6 +36,7 @@ public class MvtStockDTO {
 				.quantite(mvtStock.getQuantite())
 				.article(ArticleDTO.fromEntity(mvtStock.getArticle()))
 				.mvtStock(MvtStockDTO.fromEntity(mvtStock).getMvtStock())
+				.idEntreprise(mvtStock.getIdEntreprise())
 				.build();
 	}
 	
@@ -48,6 +51,7 @@ public class MvtStockDTO {
 		mvtStock.setQuantite(mvtStockDTO.getQuantite());
 		mvtStock.setArticle(ArticleDTO.toEntity(mvtStockDTO.getArticle()));
 		mvtStock.setMvtStock(mvtStockDTO.getMvtStock());
+		mvtStock.setIdEntreprise(mvtStockDTO.getIdEntreprise());
 		return mvtStock;
 	}
 }

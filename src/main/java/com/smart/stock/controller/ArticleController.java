@@ -12,16 +12,16 @@ import com.smart.stock.services.ArticleService;
 @RestController
 public class ArticleController implements ArticleApi{
 	
-	//Field Injection
-	@Autowired
+//	//Field Injection
+//	@Autowired
 	private ArticleService articleService;
-	
-	//Getter Injection
-	@Autowired
-	public ArticleService getArticleService() {
-		
-		return articleService;
-	}
+//	
+//	//Setter Injection
+//	@Autowired
+//	public ArticleService setArticleService(ArticleService articleService) {
+//		this.articleService = articleService;
+//		return articleService;
+//	}
 	
 	
 	//Constructor Injection 
@@ -33,31 +33,27 @@ public class ArticleController implements ArticleApi{
 	
 	@Override
 	public ArticleDTO save(ArticleDTO dto) {
-		// TODO Auto-generated method stub
-		return null;
+		return articleService.save(dto);
 	}
 
 	@Override
 	public ArticleDTO findById(Integer id) {
-		// TODO Auto-generated method stub
-		return null;
+		return articleService.findById(id);
 	}
 
 	@Override
 	public ArticleDTO finByCodeArticle(String codeArticle) {
-		// TODO Auto-generated method stub
-		return null;
+		return articleService.finByCodeArticle(codeArticle);
 	}
 
 	@Override
 	public List<ArticleDTO> findAll() {
-		// TODO Auto-generated method stub
-		return null;
+		return articleService.findAll();
 	}
 
 	@Override
 	public void delete(Integer id) {
-		// TODO Auto-generated method stub
+	 articleService.delete(id);
 		
 	}
 	

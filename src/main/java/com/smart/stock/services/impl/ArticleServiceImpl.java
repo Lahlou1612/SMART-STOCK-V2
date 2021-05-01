@@ -40,7 +40,6 @@ public class ArticleServiceImpl implements ArticleService {
 	@Override
 	public ArticleDTO findById(Integer id) {
 		if (id == null) {
-
 			log.error("ID Article is null");
 			return null;
 		}
@@ -59,7 +58,7 @@ public class ArticleServiceImpl implements ArticleService {
 			log.error("Code Article is null");
 			return null;
 		}
-		Optional<Article> article = articleRepository.findArticleByCodeArticle(codeArticle);
+		Optional<Article> article = articleRepository.findByCodeArticle(codeArticle);
 
 		ArticleDTO dto = ArticleDTO.fromEntity(article.get());
 
@@ -76,7 +75,6 @@ public class ArticleServiceImpl implements ArticleService {
 
 	@Override
 	public void delete(Integer id) {
-		
 		if (id == null) {
 			
 			log.error("Article ID is null");

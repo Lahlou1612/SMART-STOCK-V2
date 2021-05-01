@@ -3,7 +3,6 @@ package com.smart.stock.dto;
 import java.time.Instant;
 import java.util.List;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.smart.stock.models.CommandeClient;
 
 import lombok.Builder;
@@ -21,7 +20,9 @@ public class CommandeClientDTO {
 	
 	private ClientDTO client;
 	
-	@JsonIgnore
+	private Integer idEntreprise;
+	
+	
 	private List<LigneCommandeClientDTO> ligneCommandeClient;
 	
 	
@@ -37,6 +38,7 @@ public class CommandeClientDTO {
 				.code(commandeClient.getCode())
 				.dateCommande(commandeClient.getDateCommande())
 				.client(ClientDTO.fromEntity(commandeClient.getClient()))
+				.idEntreprise(commandeClient.getIdEntreprise())
 				.build();
 	}
 	
@@ -51,6 +53,7 @@ public class CommandeClientDTO {
 		commandeClient.setCode(commandeClientDTO.getCode());
 		commandeClient.setCreationDate(commandeClientDTO.getDateCommande());
 		commandeClient.setClient(ClientDTO.toEntity(commandeClientDTO.getClient()));
+		commandeClient.setIdEntreprise(commandeClientDTO.getIdEntreprise());
 		return commandeClient;
 	}
 	

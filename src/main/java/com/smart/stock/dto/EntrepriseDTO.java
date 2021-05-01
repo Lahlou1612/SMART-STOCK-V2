@@ -22,7 +22,7 @@ public class EntrepriseDTO {
 	private String photo;
 	
 	private String numTel;
-	
+		
 	private AdresseDTO adresse;
 	
 	public static EntrepriseDTO fromEntity (Entreprise entreprise) {
